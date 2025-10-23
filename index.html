@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Mymba - Cuidado y adopción de mascotas</title>
+
+  <!-- Fuente Questrial (textos) -->
+  <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+
+  <!-- CSS separado -->
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <!-- HEADER / NAV -->
+  <header id="mainHeader" class="header">
+    <div class="header-inner">
+      <!-- Logo izquierda (reemplazá src por tu logo) -->
+      <div class="logo">
+        <img src="./images/Isologo base.svg" alt="Logo Mymba" id="logoImg">
+      </div>
+
+      <!-- Nav centrado -->
+      <nav class="nav">
+        <ul class="nav-list">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#conocenos">Conócenos</a></li>
+          <li><a href="#funciones">Funciones</a></li>
+          <li><a href="#contacto">Contáctanos</a></li>
+        </ul>
+      </nav>
+
+      <!-- Descargar derecha -->
+      <div class="download">
+        <a href="https://www.example.com/descargar" target="_blank" rel="noopener" class="download-link">
+          <span class="download-badge" role="button">
+            <!-- icono svg simple -->
+            <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M12 3v12M6 9l6 6 6-6" stroke="black" stroke-width="1.8" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span class="download-text">Descargar</span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- BANNER (centrado, no fija) -->
+  <section id="banner" class="banner">
+    <img src="./images/Logotipo base.svg" alt="Banner Mymba" class="banner-img">
+  </section>
+
+  <main>
+    <!-- INICIO -->
+    <section id="inicio" class="inicio">
+      <div class="inicio-content">
+        <h1 class="titulo-pp">Mymba</h1>
+        <h2 class="subtitulo-pp">Cuidar juntos es más facil</h2>
+        <p class="descripcion">Mymba es una aplicación pensada para todos los que amamos y cuidamos a los animales. Está dedicada especialmente al bienestar de perros y gatos en Corrientes, ofreciendo herramientas concretas para adoptar, reportar, buscar y ayudar a nuestras mascotas, en conjunto con una comunidad comprometida y solidaria.</p>
+      </div>
+    </section> 
+
+    <!-- CONOCENOS: carrusel (4 miembros) -->
+    <section id="conocenos" class="conocenos">
+      <h2 class="section-title">Conócenos</h2>
+
+      <div class="team-wrapper">
+        <button class="team-arrow left-arrow" id="prevMember" aria-label="Anterior">‹</button>
+
+        <div class="team-slider" aria-live="polite">
+          <div class="member-slide active">
+            <img src="./images/2.png" alt="Miembro 1">
+            <h3 class="member-name">Facundo I. Maculia</h3>
+            <p class="member-role">Desarrollador Web</p>
+          </div>
+          <div class="member-slide">
+            <img src="./images/1.png" alt="Miembro 2">
+            <h3 class="member-name">Maximiliano A. Brez</h3>
+            <p class="member-role">Desarrollador</p>
+          </div>
+          <div class="member-slide">
+            <img src="./images/3.png" alt="Miembro 3">
+            <h3 class="member-name">Lucas A. Sandoval</h3>
+            <p class="member-role">Director General</p>
+          </div>
+          <div class="member-slide">
+            <img src="./images/4.png" alt="Miembro 4">
+            <h3 class="member-name">Maximiliano Benitez</h3>
+            <p class="member-role">Diseñador</p>
+          </div>
+        </div>
+
+        <button class="team-arrow right-arrow" id="nextMember" aria-label="Siguiente">›</button>
+      </div>
+    </section>
+
+    <!-- FUNCIONES: 3 columnas con Expand/Collapse -->
+    <section id="funciones" class="funciones">
+      <h2 class="section-title">Funciones</h2>
+
+      <div class="funciones-grid">
+        <!-- Izquierda: Perdidos (azul) -->
+        <div class="func-col col-left">
+          <img src="./images/perdidos.svg" alt="Perdidos" class="func-icon">
+          <h3>Perdidos</h3>
+          <div class="expandable">
+            <p class="short-text">Reportá animales perdidos o encontrados y ayudá a reunirlos con sus familias.</p>
+            <div class="more-text">
+              <p>Publicá información, sumá fotos y dejá que la comunidad te ayude a buscar. Entre todos, podemos hacer la diferencia.</p>
+            </div>
+            <button class="toggle-btn" aria-expanded="false">Leer Más</button>
+          </div>
+        </div>
+
+        <!-- Medio: Adopción (rosa) -->
+        <div class="func-col col-mid">
+          <img src="./images/adoptar.svg" alt="Adopción" class="func-icon">
+          <h3>Adopción</h3>
+          <div class="expandable">
+            <p class="short-text">Conectamos a animales que buscan un hogar con personas dispuestas a brindarles amor y cuidado.</p>
+            <div class="more-text">
+              <p>Desde la app podés conocer a cada mascota, ver su historia, necesidades y estado de salud, y ponerte en contacto con quienes la resguardan. Adoptar nunca fue tan fácil, responsable y seguro.</p>
+            </div>
+            <button class="toggle-btn" aria-expanded="false">Leer Más</button>
+          </div>
+        </div>
+
+        <!-- Derecha: Foro (naranja) -->
+        <div class="func-col col-right">
+          <img src="./images/foro.svg" alt="Foro" class="func-icon">
+          <h3>Foro</h3>
+          <div class="expandable">
+            <p class="short-text">Intercambiá experiencias, consejos y dudas con otros amantes de los animales.</p>
+            <div class="more-text">
+              <p>Un espacio abierto para aprender, compartir y construir una red de apoyo entre cuidadores y adoptantes.</p>
+            </div>
+            <button class="toggle-btn" aria-expanded="false">Leer Más</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<!-- VIDEO / SPOT -->
+<section id="video" class="video-section">
+  <h2 class="section-title">UNA HERRAMIENTA PARA TRANSFORMAR VIDAS</h2>
+  <p class="video-subtext">
+    En un mundo donde miles de animales esperan una segunda oportunidad, nuestra aplicación nace para unir personas y mascotas a través de la tecnología, la empatía y el compromiso con el bienestar animal.
+    <br>
+    Descubrí cómo esta iniciativa está cambiando la forma de adoptar y cuidar.
+ Mirá nuestro spot y conocé el corazón detrás del proyecto.
+  </p>
+
+<div class="video-wrapper">
+  <iframe width="560" height="315" src="https://www.youtube.com/embed/-W43WvT8Kgo?si=RUsCVO2FquDw6SVz" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</div>
+
+    <!-- CONTACTO -->
+    <section id="contacto" class="contacto">
+      <h2 class="section-title">Contáctanos</h2>
+
+      <div class="contact-card">
+        <form id="contactForm" action="mailto:mymba.sas@gmail.com" method="post" enctype="text/plain">
+          <label for="nombre" class="form-label">Nombre:</label>
+          <input id="nombre" name="nombre" type="text" required>
+
+          <label for="apellido" class="form-label">Apellido:</label>
+          <input id="apellido" name="apellido" type="text" required>
+
+          <label for="email" class="form-label">Correo:</label>
+          <input id="email" name="email" type="email" required>
+
+          <label for="mensaje" class="form-label">Mensaje:</label>
+          <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+
+          <button type="submit" class="submit-btn">
+            <span class="btn-icon">✉</span>
+            <span class="btn-text">Enviar</span>
+          </button>
+        </form>
+
+        <div class="social-follow">
+          <a href="https://www.instagram.com/mymba.sas/?igsh=dWJtams3ZDVqcGpk#" target="_blank" rel="noopener" class="instagram-link">Seguinos en Instagram</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- SCRIPTS -->
+  <script>
+  /* ===== Header fijo al scrollear ===== */
+  (function() {
+    const header = document.getElementById('mainHeader');
+    const banner = document.getElementById('banner');
+    const stickyPoint = banner ? banner.offsetHeight - 20 : 100;
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > stickyPoint) header.classList.add('fixed'); else header.classList.remove('fixed');
+    });
+  })();
+
+  /* ===== Animación: animales laterales se fijan al llegar a Conócenos ===== */
+  (function() {
+    const sideDog = document.getElementById('sideDog');
+    const sideCat = document.getElementById('sideCat');
+    const conocenos = document.getElementById('conocenos');
+
+    function update() {
+      const top = window.scrollY;
+      const reach = conocenos.getBoundingClientRect().top + window.scrollY - 120;
+      if (top >= reach) {
+        sideDog.classList.add('fixed-animal');
+        sideCat.classList.add('fixed-animal');
+      } else {
+        sideDog.classList.remove('fixed-animal');
+        sideCat.classList.remove('fixed-animal');
+      }
+    }
+    window.addEventListener('scroll', update);
+    window.addEventListener('resize', update);
+    document.addEventListener('DOMContentLoaded', update);
+  })();
+
+  /* ===== Carrusel simple del equipo ===== */
+  (function() {
+    const slides = document.querySelectorAll('.member-slide');
+    let current = 0;
+    const total = slides.length;
+    const prevBtn = document.getElementById('prevMember');
+    const nextBtn = document.getElementById('nextMember');
+    function show(i){
+      slides.forEach((s, idx) => s.classList.toggle('active', idx === i));
+    }
+    prevBtn.addEventListener('click', () => { current = (current - 1 + total) % total; show(current); });
+    nextBtn.addEventListener('click', () => { current = (current + 1) % total; show(current); });
+  })();
+
+  /* ===== Expand / Collapse en Funciones ===== */
+  (function() {
+    document.querySelectorAll('.expandable').forEach(container => {
+      const btn = container.querySelector('.toggle-btn');
+      const more = container.querySelector('.more-text');
+      // Inicial: colapsado
+      more.style.maxHeight = '0';
+      more.style.overflow = 'hidden';
+      more.style.transition = 'max-height 0.45s ease, padding 0.35s ease';
+      btn.addEventListener('click', () => {
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        if (!expanded) {
+          more.style.maxHeight = more.scrollHeight + 24 + 'px'; // expande según contenido
+          btn.textContent = 'Leer Menos';
+          btn.setAttribute('aria-expanded', 'true');
+          container.closest('.func-col').classList.add('expanded');
+        } else {
+          more.style.maxHeight = '0';
+          btn.textContent = 'Leer Más';
+          btn.setAttribute('aria-expanded', 'false');
+          container.closest('.func-col').classList.remove('expanded');
+        }
+      });
+    });
+  })();
+
+  /* ===== Smooth scrolling para anclas internas ===== */
+  (function(){
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', function(e){
+        const target = document.querySelector(this.getAttribute('href'));
+        if(target){
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  })();
+  </script>
+
+
+    <!-- FOOTER -->
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Mymba - Corrientes, Argentina</p>
+  </footer>
+  
+</body>
+</html>

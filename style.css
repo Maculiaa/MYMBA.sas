@@ -1,0 +1,222 @@
+/* ========== FUENTES ========== */
+/* PP Nikkei Maru Light: si tenés el font file, colocá ruta correcta */
+@font-face {
+  font-family: "PP Nikkei Maru Light";
+  src: url("fonts/PPNikkeiMaruLight.woff2") format("woff2"),
+       url("fonts/PPNikkeiMaruLight.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Variables */
+:root{
+  --yellow: #DEFD2E;
+  --contact-blue: #0B4392;
+  --orange: #EF922D;
+  --blue-col: #0B75D9;
+  --pink-col: #FFB6C1;
+  --body-font: "Questrial", system-ui, Arial, sans-serif;
+  --title-font: "PP Nikkei Maru Light", var(--body-font);
+}
+
+/* Reset */
+*{box-sizing: border-box; margin:0; padding:0}
+html,body{height:100%;}
+body{
+  font-family: var(--body-font);
+  color:#111;
+  line-height:1.4;
+  background-color: #f6f7fb;
+  /* ===== Fondo SVG global (ajustado más chico, responsive) =====
+     Reemplazá 'fondo.svg' por la ruta de tu SVG.
+     background-size usa porcentaje (del contenedor) para hacerlo más chico.
+  */
+   background-image:
+    linear-gradient(rgba(246, 247, 251, 0.9), rgba(246, 247, 251, 0.9)), /* capa clara encima */
+    url('./images/Mesa\ de\ trabajo\ 1.svg');
+  background-repeat: no-repeat;
+  background-position: center top; /* posición general */
+  background-size: 250%; /* <--- tamaño más chico; ajustá entre 30% y 60% */
+  background-attachment: fixed; /* lo deja anclado al viewport (si querés eliminar, comentar) */
+  
+}
+
+
+/* ALTERNATIVA: si preferís usar <img> en HTML, comentar el background-image y usar:
+   <img src="fondo.svg" class="bg-img"> con CSS:
+   .bg-img{position:fixed; top:0; left:50%; transform:translateX(-50%); width:40vw; height:auto; z-index:-1;}
+*/
+
+/* ========== HEADER ========== */
+.header{
+  width:100%;
+  background:#fff;
+  position:relative;
+  z-index:1000;
+  transition:box-shadow .35s ease, transform .35s ease;
+}
+.header.fixed{
+  position:fixed;
+  top:0; left:0; right:0;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+.header-inner{
+  max-width:1200px; margin:0 auto;
+  display:flex; align-items:center; justify-content:space-between;
+  padding:14px 20px;
+}
+.logo img{height:48px; object-fit:contain;  height: 50px;
+    filter: brightness(0) saturate(100%) invert(14%) sepia(95%) saturate(3170%) hue-rotate(203deg) brightness(91%) contrast(99%);
+
+}
+
+/* Nav centrado */
+.nav{flex:1; text-align:center}
+.nav-list{list-style:none; display:inline-flex; gap:28px; align-items:center}
+.nav-list a{color:#000; text-decoration:none; font-weight:600; font-size:20px}
+
+/* Descargar (badge) */
+.download-badge{
+  display:inline-flex; gap:8px; align-items:center;
+  padding:8px 12px; border-radius:999px; background:var(--yellow);
+  color:#000; font-weight:800; text-decoration:none;
+}
+.download-badge svg{display:block}
+
+/* ========== BANNER ========== */
+.banner{max-width:1200px; margin:30px auto; padding:0 20px}
+.banner-img{width:100%; display:block; border-radius:12px; object-fit:cover; filter: brightness(0) saturate(100%) invert(14%) sepia(95%) saturate(3170%) hue-rotate(203deg) brightness(91%) contrast(99%);}
+
+/* ========== INICIO ========== */
+.inicio{
+  position:relative;
+  padding:40px 20px 80px;
+  max-width:1200px; margin:0 auto;
+  display:flex; align-items:center; justify-content:center;
+  min-height:260px;
+}
+.inicio-content{ text-align:center; max-width:760px; padding:20px }
+.titulo-pp{ font-family:var(--title-font); font-size:48px; margin-bottom:8px }
+.subtitulo-pp{ font-family:var(--title-font); font-size:40px; margin-bottom:12px }
+.descripcion{ font-size: 25px;}
+
+
+/* ========== CONOCENOS ========== */
+.conocenos{ padding:120px 20px 60px; text-align:center }
+.section-title{ font-family:var(--title-font); font-size:40px; margin-bottom:18px }
+
+/* Carrusel */
+.team-wrapper{ display:flex; align-items:center; justify-content:center; gap:16px; margin-top:24px; }
+.team-arrow{ background:transparent; border:none; font-size:40px; cursor:pointer }
+.team-slider{ width:420px; height:360px; position:relative; overflow:hidden; border-radius:12px; background:#fff; box-shadow:0 6px 18px rgba(0,0,0,0.06) }
+.member-slide{ position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; padding:20px; opacity:0; transform:scale(.98); transition:opacity .45s ease, transform .45s ease }
+.member-slide.active{ opacity:1; transform:scale(1); z-index:2 }
+.member-slide img{ width:160px; height:160px; object-fit:cover; border-radius:50%; margin-bottom:14px }
+.member-name{ font-family:var(--title-font); font-size:25px; margin-bottom:6px }
+.member-role{ font-size:20px; color:#444 }
+
+/* ========== FUNCIONES (3 columnas) ========== */
+.funciones{ padding:150px 20px; max-width:1200px; margin:0 auto; text-align: center; }
+.funciones-grid{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:18px; margin-top:24px }
+.func-col{ min-height:220px; padding:22px; border-radius:12px; display:flex; flex-direction:column; align-items:center; text-align:center; transition:all .4s ease; overflow:hidden; position:relative }
+.func-icon{ width:100px; height:100px; object-fit:contain; margin-bottom:12px }
+
+/* Colores solicitados */
+.col-left{ background:var(--blue-col); color:#fff }
+.col-mid{ background:var(--yellow); color:#000 }
+.col-right{ background:var(--orange); color:#fff }
+
+/* Expandible: .more-text colapsado con transition */
+.expandable{ width:100%; }
+.more-text{ max-height:0; overflow:hidden; transition:max-height .45s ease, padding .35s ease; padding:0 6px; }
+.expandable .short-text{ margin-bottom:10px; padding:0 6px }
+.toggle-btn{
+  margin-top:12px; padding:8px 14px; border-radius:999px; border:none; cursor:pointer;
+  background:transparent; font-weight:700;
+}
+/* Cuando la columna está expandida la elevamos un poco y ampliamos padding para "expandir el fondo" */
+.func-col.expanded{ box-shadow: 0 10px 30px rgba(0,0,0,0.08); transform: translateY(-4px); padding-bottom:36px }
+
+/* ========== VIDEO ========== */
+.video-section{ padding:60px 20px; text-align:center }
+.video-subtext{ max-width:760px; margin:12px auto 18px }
+.video-wrapper{ max-width:920px; margin:0 auto; border-radius:12px; overflow:hidden }
+.video-wrapper iframe{ width:100%; height:520px; display:block; border:0 }
+.video-section {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.video-section .section-title {
+  font-family: var(--title-font);
+  font-size: 40px;
+  color: #0b4392;
+  margin-bottom: 10px;
+}
+
+.video-subtext {
+  font-family: var(--body-font);
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 40px;
+}
+
+.video-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.video-wrapper video {
+  width: 80%;
+  max-width: 900px;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+.video-wrapper iframe {
+  width: 80%;
+  max-width: 900px;
+  height: 480px;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  border: none;
+  display: block;
+  z-index: 10;
+}
+
+/* ========== CONTACTO ========== */
+.contacto{ padding:60px 20px; max-width:900px; margin:0 auto 80px }
+.contact-card{ background:var(--contact-blue); padding:28px; border-radius:12px; color:#fff }
+.form-label{ display:block; margin-top:10px; margin-bottom:6px; color:var(--yellow); font-weight:700 }
+input[type="text"], input[type="email"], textarea{
+  width:100%; padding:12px; border-radius:8px; border:none; margin-bottom:8px; background:#fff; color:#000; font-family:var(--body-font)
+}
+.submit-btn{
+  display:inline-flex; gap:10px; align-items:center; padding:10px 18px; border-radius:999px; border:none; cursor:pointer; margin-top:8px;
+  background:var(--yellow); color:#000; font-weight:800; font-size:16px;
+}
+.instagram-link{ color:var(--orange); text-decoration:none; font-weight:700; display:inline-block; margin-top:12px }
+
+/* ========== Responsive ========== */
+@media (max-width:900px){
+  .nav-list{ gap:16px; font-size:14px }
+  .side-animal{ display:none } /* ocultar animales en pantallas chicas */
+  .team-slider{ width:320px; height:340px }
+  .video-wrapper iframe{ height:300px }
+  .funciones-grid{ grid-template-columns:1fr; }
+}
+@media (max-width:520px){
+  .titulo-pp{ font-size:32px }
+  .subtitulo-pp{ font-size:16px }
+  body { background-size: 60%; /* en pantallas chicas agrandamos % para que siga viéndose bien */ }
+}
+
+/* FOOTER */
+.site-footer{
+  padding:18px 10px;
+  text-align:center;
+  color:#fff;
+  background: rgba(0,0,0,0.45);
+}
